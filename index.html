@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lumos Technologies - Illuminating Your Tech Solutions</title>
+    <title>Lumos Technologies - Supporting Autism Community</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -15,8 +15,8 @@
             </div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
-                <li><a href="#services">Services</a></li>
                 <li><a href="#about">About</a></li>
+                <li><a href="#survey">Survey</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -25,36 +25,93 @@
     <main>
         <section id="hero">
             <div class="hero-content">
-                <h1>Illuminating Your Tech Solutions</h1>
-                <p>Empowering businesses with innovative technology solutions</p>
-                <a href="#contact" class="cta-button">Get Started</a>
+                <h1>Empowering the Autism Community</h1>
+                <p>Developing innovative technology solutions to support parents, teachers, and professionals working with children on the autism spectrum</p>
+                <a href="#survey" class="cta-button">Take Our Survey</a>
             </div>
         </section>
 
-        <section id="services">
-            <h2>Our Services</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <i class="fas fa-code"></i>
-                    <h3>Custom Software Development</h3>
-                    <p>Tailored solutions for your unique business needs</p>
-                </div>
-                <div class="service-card">
-                    <i class="fas fa-mobile-alt"></i>
-                    <h3>Mobile Applications</h3>
-                    <p>Native and cross-platform mobile solutions</p>
-                </div>
-                <div class="service-card">
-                    <i class="fas fa-cloud"></i>
-                    <h3>Cloud Solutions</h3>
-                    <p>Scalable cloud infrastructure and services</p>
-                </div>
+        <section id="about">
+            <h2>Our Mission</h2>
+            <div class="about-content">
+                <p>At Lumos Technologies, we believe in the power of technology to make a difference in the lives of children on the autism spectrum and those who support them. Our mission is to develop innovative solutions that address the unique challenges faced by:</p>
+                <ul class="target-audience">
+                    <li><i class="fas fa-users"></i> Parents and Caregivers</li>
+                    <li><i class="fas fa-chalkboard-teacher"></i> Teachers and Educators</li>
+                    <li><i class="fas fa-user-md"></i> Healthcare Professionals</li>
+                    <li><i class="fas fa-child"></i> Children on the Spectrum</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="survey">
+            <h2>Help Us Understand Your Needs</h2>
+            <div class="survey-container">
+                <p class="survey-intro">We're developing technology solutions to support the autism community. Your input is crucial in helping us create tools that truly make a difference.</p>
+                <form id="survey-form">
+                    <div class="form-group">
+                        <label for="role">Your Role*</label>
+                        <select id="role" name="role" required>
+                            <option value="">Select your role</option>
+                            <option value="parent">Parent/Caregiver</option>
+                            <option value="teacher">Teacher/Educator</option>
+                            <option value="professional">Healthcare Professional</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="experience">Years of Experience*</label>
+                        <select id="experience" name="experience" required>
+                            <option value="">Select years of experience</option>
+                            <option value="0-1">0-1 years</option>
+                            <option value="1-3">1-3 years</option>
+                            <option value="3-5">3-5 years</option>
+                            <option value="5+">5+ years</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="challenges">What are your biggest challenges?*</label>
+                        <div class="checkbox-group">
+                            <label><input type="checkbox" name="challenges" value="communication"> Communication</label>
+                            <label><input type="checkbox" name="challenges" value="education"> Education</label>
+                            <label><input type="checkbox" name="challenges" value="behavior"> Behavior Management</label>
+                            <label><input type="checkbox" name="challenges" value="social"> Social Skills</label>
+                            <label><input type="checkbox" name="challenges" value="daily"> Daily Routines</label>
+                            <label><input type="checkbox" name="challenges" value="other"> Other</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="tech_usage">How do you currently use technology?*</label>
+                        <div class="checkbox-group">
+                            <label><input type="checkbox" name="tech_usage" value="apps"> Educational Apps</label>
+                            <label><input type="checkbox" name="tech_usage" value="communication"> Communication Tools</label>
+                            <label><input type="checkbox" name="tech_usage" value="tracking"> Progress Tracking</label>
+                            <label><input type="checkbox" name="tech_usage" value="none"> Don't use technology</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="needs">What kind of technology solutions would be most helpful?*</label>
+                        <textarea id="needs" name="needs" required placeholder="Please describe your needs and ideas..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email (optional)</label>
+                        <input type="email" id="email" name="email" placeholder="If you'd like to receive updates about our solutions">
+                    </div>
+
+                    <button type="submit" class="submit-button">Submit Survey</button>
+                </form>
             </div>
         </section>
 
         <section id="contact">
-            <h2>Contact Us</h2>
+            <h2>Get in Touch</h2>
             <div class="contact-container">
+                <p>Have questions or suggestions? We'd love to hear from you!</p>
                 <form id="contact-form">
                     <div class="form-group">
                         <label for="name">Name</label>
@@ -78,14 +135,14 @@
         <div class="footer-content">
             <div class="footer-section">
                 <h3>Lumos Technologies</h3>
-                <p>Illuminating Your Tech Solutions</p>
+                <p>Empowering the Autism Community through Technology</p>
             </div>
             <div class="footer-section">
                 <h3>Quick Links</h3>
                 <ul>
                     <li><a href="#home">Home</a></li>
-                    <li><a href="#services">Services</a></li>
                     <li><a href="#about">About</a></li>
+                    <li><a href="#survey">Survey</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </div>
