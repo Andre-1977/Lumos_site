@@ -1,3 +1,39 @@
+// Handle survey form submission
+document.getElementById('survey-form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    
+    // Get form values
+    const formData = new FormData(this);
+    const data = {
+        role: formData.get('role'),
+        experience: formData.get('experience'),
+        challenges: formData.getAll('challenges'),
+        tech_usage: formData.getAll('tech_usage'),
+        needs: formData.get('needs'),
+        email: formData.get('email')
+    };
+    
+    try {
+        const response = await fetch('http://localhost:5000/api/survey', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data)
+        });
+
+        if (response.ok) {
+            alert('Thank you for your valuable input! Your responses will help us develop better solutions for the autism community.');
+            this.reset();
+        } else {
+            throw new Error('Failed to submit survey');
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        alert('There was an error submitting your survey. Please try again later.');
+    }
+});
+
 // Handle contact form submission
 document.getElementById('contact-form').addEventListener('submit', function(e) {
     e.preventDefault();
@@ -8,7 +44,7 @@ document.getElementById('contact-form').addEventListener('submit', function(e) {
     const message = document.getElementById('message').value;
     
     // Here you would typically send the form data to a server
-    console.log('Form submitted:', { name, email, message });
+    console.log('Contact form submitted:', { name, email, message });
     
     // Show success message
     alert('Thank you for your message! We will get back to you soon.');
@@ -69,4 +105,31 @@ window.addEventListener('scroll', () => {
         header.classList.add('scroll-up');
     }
     lastScroll = currentScroll;
+});
+
+// Form validation
+function validateForm(form) {
+    const requiredFields = form.querySelectorAll('[required]');
+    let isValid = true;
+
+    requiredFields.forEach(field => {
+        if (!field.value.trim()) {
+            isValid = false;
+            field.classList.add('error');
+        } else {
+            field.classList.remove('error');
+        }
+    });
+
+    return isValid;
+}
+
+// Add validation to forms
+document.querySelectorAll('form').forEach(form => {
+    form.addEventListener('submit', function(e) {
+        if (!validateForm(this)) {
+            e.preventDefault();
+            alert('Please fill in all required fields.');
+        }
+    });
 }); 
